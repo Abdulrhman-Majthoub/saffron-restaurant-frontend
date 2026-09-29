@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 
-const API_URL = "http://localhost:3001/reservations";
+const API_URL = `${process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001"}/reservations`;
 
 type ReservationFormData = {
   guestName: string;

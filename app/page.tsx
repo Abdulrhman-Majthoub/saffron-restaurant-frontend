@@ -1,69 +1,281 @@
-import Image from "next/image";
+import ReservationForm from "@/components/ReservationForm";
+import OrderMenu from "../components/OrderMenu";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main>
+      <section className="hero" id="home">
+        <nav className="navbar container">
+          <a className="logo" href="#home">
+            <span>SAFFRON</span>
+            <small>FINE DINING</small>
+          </a>
+
+          <div className="nav-links">
+            <a href="#story">Our Story</a>
+            <a href="#full-menu">Menu</a>
+            <a href="#experience">Experience</a>
+          </div>
+
+          <a className="button button-small button-light" href="#reservation">
+            Reserve a Table
+          </a>
+        </nav>
+
+        <div className="hero-content container">
+          <p className="eyebrow">Mediterranean Fine Dining · Amman</p>
+
+          <h1>
+            An evening
+            <br />
+            worth <em>remembering.</em>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="hero-description">
+            Seasonal Mediterranean flavors, thoughtfully composed in the heart
+            of Amman.
+          </p>
+
+          <div className="hero-actions">
+            <a className="button button-gold" href="#reservation">
+              Book Your Table <span>↗</span>
+            </a>
+
+            <a className="text-link" href="#full-menu">
+              Explore the menu <span>↓</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="hero-bottom container">
+          <span>Open Tuesday — Sunday</span>
+          <span>5:00 PM — 12:00 AM</span>
+          <span>Abdali Boulevard, Amman</span>
+        </div>
+      </section>
+
+      <section className="intro-section section container" id="story">
+        <div className="intro-copy">
+          <p className="eyebrow gold">The Saffron Philosophy</p>
+
+          <h2>
+            Every plate tells a story
+            <br />
+            of place, season, and soul.
+          </h2>
+        </div>
+
+        <div className="intro-text">
+          <p>
+            Saffron is an intimate dining room where the Mediterranean meets
+            modern imagination. We source with care, cook with precision, and
+            welcome every guest like an old friend.
+          </p>
+
+          <a className="text-link dark-link" href="#experience">
+            Discover the experience <span>→</span>
+          </a>
+        </div>
+      </section>
+
+      <section id="experience" className="experience-section">
+        <div className="experience-top container">
+          <div>
+            <p className="eyebrow gold">AN EVENING AT SAFFRON</p>
+
+            <h2>
+              Designed for
+              <br />
+              unforgettable nights.
+            </h2>
+          </div>
+
+          <p className="experience-intro">
+            From your first cocktail to the final course, every detail is
+            shaped around warmth, flavour, and effortless hospitality.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="experience-feature">
+          <img
+            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=90"
+            alt="Elegant Saffron dining experience"
+          />
+
+          <div className="experience-feature-copy">
+            <p className="eyebrow gold">THE DINING ROOM</p>
+
+            <h3>
+              A table made
+              <br />
+              for staying awhile.
+            </h3>
+
+            <p>
+              Seasonal menus, candlelit tables, and a relaxed rhythm that turns
+              dinner into an occasion.
+            </p>
+
+            <a className="text-link light-link" href="#reservation">
+              Reserve your evening <span>→</span>
+            </a>
+          </div>
         </div>
-      </main>
-    </div>
+
+        <div className="experience-details container">
+          <article>
+            <span>01</span>
+            <h3>Chef&apos;s Selection</h3>
+            <p>
+              A seasonal collection of dishes selected to take you through the
+              Saffron kitchen.
+            </p>
+          </article>
+
+          <article>
+            <span>02</span>
+            <h3>The Saffron Bar</h3>
+            <p>
+              Signature cocktails, rare spirits, and late-night conversation
+              until midnight.
+            </p>
+          </article>
+
+          <article>
+            <span>03</span>
+            <h3>Private Occasions</h3>
+            <p>
+              Birthdays, intimate celebrations, and business dinners made
+              personal.
+            </p>
+          </article>
+        </div>
+      </section>
+
+    
+
+      <OrderMenu />
+
+      <section className="reservation-section" id="reservation">
+        <div className="reservation-photo" />
+
+        <div className="reservation-panel">
+          <p className="eyebrow gold">Reserve Your Evening</p>
+          <h2>Make a reservation</h2>
+
+          <p className="reservation-description">
+            Join us for a night of warm hospitality and unforgettable flavors.
+          </p>
+
+          <ReservationForm />
+        </div>
+      </section>
+
+      <section className="visit-section section">
+        <div className="container visit-layout">
+          <div className="visit-image">
+            <img
+              src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=85"
+              alt="Saffron restaurant interior"
+            />
+          </div>
+
+          <div className="visit-content">
+            <p className="eyebrow">Visit Saffron</p>
+            <h2>An evening worth staying for.</h2>
+
+            <p className="visit-description">
+              Join us for modern Mediterranean and Levantine cuisine,
+              thoughtful service, and an atmosphere made for long
+              conversations.
+            </p>
+
+            <div className="visit-details">
+              <div>
+                <span>Location</span>
+                <p>Abdali Boulevard, Amman, Jordan</p>
+              </div>
+
+              <div>
+                <span>Hours</span>
+                <p>Tuesday — Sunday, 5 PM — 12 AM</p>
+              </div>
+
+              <div>
+                <span>Contact</span>
+                <a href="tel:0789854438">0789854438</a>
+                <a href="mailto:saffron@gmail.com">saffron@gmail.com</a>
+              </div>
+            </div>
+
+            <div className="visit-actions">
+              <a
+                className="button"
+                href="https://www.google.com/maps/search/?api=1&query=Abdali+Boulevard+Amman"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open in Maps
+              </a>
+
+              <a
+                className="instagram-link"
+                href="https://www.instagram.com/SaffronAbdoun"
+                target="_blank"
+                rel="noreferrer"
+              >
+                @SaffronAbdoun
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="footer">
+        <div className="container footer-top">
+          <div>
+            <a className="logo footer-logo" href="#home">
+              <span>SAFFRON</span>
+              <small>FINE DINING</small>
+            </a>
+
+            <p>Seasonal Mediterranean dining in Amman.</p>
+          </div>
+
+          <div className="footer-links">
+            <div>
+              <span>Visit</span>
+              <p>
+                Abdali Boulevard
+                <br />
+                Amman, Jordan
+              </p>
+            </div>
+
+            <div>
+              <span>Contact</span>
+              <p>
+                0789854438
+                <br />
+                saffron@gmail.com
+              </p>
+            </div>
+
+            <div>
+              <span>Hours</span>
+              <p>
+                Tue — Sun
+                <br />5 PM — 12 AM
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="container footer-bottom">
+          <span>© 2026 Saffron Restaurant</span>
+          <span>Designed for memorable evenings</span>
+        </div>
+      </footer>
+    </main>
   );
 }

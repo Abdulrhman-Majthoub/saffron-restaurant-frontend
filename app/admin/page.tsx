@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-const API_URL = "http://localhost:3001";
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
 
 type OrderStatus = "new" | "preparing" | "ready" | "completed" | "cancelled";
 
@@ -114,9 +114,7 @@ export default function AdminPage() {
       const updatedOrder = await response.json();
 
       setOrders((currentOrders) =>
-        currentOrders.map((order) =>
-          order.id === id ? updatedOrder : order,
-        ),
+        currentOrders.map((order) => (order.id === id ? updatedOrder : order)),
       );
     } catch (error) {
       setErrorMessage(
@@ -317,8 +315,8 @@ export default function AdminPage() {
                       <h2>{reservation.guestName}</h2>
                       <p>
                         {reservation.reservationDate} ·{" "}
-                        {reservation.reservationTime} ·{" "}
-                        {reservation.guestCount} guests
+                        {reservation.reservationTime} · {reservation.guestCount}{" "}
+                        guests
                       </p>
                     </div>
 

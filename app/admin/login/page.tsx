@@ -3,7 +3,7 @@
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 
-const API_URL = "http://localhost:3001/auth/login";
+const API_URL = `${process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001"}/auth/login`;
 
 export default function LoginPage() {
   const router = useRouter();
